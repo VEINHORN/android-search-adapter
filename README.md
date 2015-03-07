@@ -1,0 +1,1 @@
+# android-search-adapter
