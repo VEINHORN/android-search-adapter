@@ -1,0 +1,23 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <EditText
+        android:layout_marginTop="10dp"
+        style="@style/search_field_style"
+        android:layout_width="640px"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_edit_text"
+        android:layout_gravity="center_horizontal" />
+    <GridView
+        android:scrollbars="none"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/grid_view"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:numColumns="1"
+        android:verticalSpacing="10dp"
+        android:stretchMode="columnWidth"/>
+</LinearLayout>
