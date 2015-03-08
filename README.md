@@ -1,11 +1,11 @@
 # Android SearchAdapter
-Simple way to filter your ListView or GridView content.
+Simple way to filter your ListView or GridView content. Just extend parameterized SearchAdapter class and override getView() method.
 
 #Example
 ![](http://i.imgur.com/WeYbnDC.gif)
 
 #Usage
-1. Extend your adapter class from SearchAdapter and override getView() method.
+1 Extend your adapter class from SearchAdapter and override getView() method.
 ```Java
 public class MyAdapter extends SearchAdapter<Movie> {
     class ViewHolder {
@@ -39,16 +39,37 @@ public class MyAdapter extends SearchAdapter<Movie> {
 }
 ```
 
-2. Register filter for your content. Pass to method class type and field name for searching.
+2 Register filter for your content. Pass to method class type and field name for searching.
 ```Java
 final SearchAdapter adapter = new MyAdapter(movies, this).registerFilter(Movie.class, "enTitle");
 gridView.setAdapter(adapter);
 ```
 
-3. Call filter method from anywhere you want.
+3 Call filter method from anywhere you want.
 ```Java
 adapter.filter(string);
 ```
+
+Your class should contain getters for fields.
+```Java
+public class Movie {
+    private String title, enTitle;
+    private int poster;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getEnTitle() {
+        return enTitle;
+    }
+
+    public int getPoster() {
+        return poster;
+    }
+}
+```
+
 For more details see [Example](https://github.com/VEINHORN/android-search-adapter/tree/master/app).
 
 #License
