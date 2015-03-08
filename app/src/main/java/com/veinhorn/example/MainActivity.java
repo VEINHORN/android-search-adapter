@@ -39,7 +39,8 @@ public class MainActivity extends Activity {
         ButterKnife.inject(this);
 
         fillList(movies);
-        final SearchAdapter adapter = new MyAdapter(movies, this).registerFilter(Movie.class, "enTitle");
+        final SearchAdapter adapter = new MyAdapter(movies, this).registerFilter(Movie.class, "enTitle")
+                .setIgnoreCase(true);
         gridView.setAdapter(adapter);
 
         editText.addTextChangedListener(new TextWatcher() {
